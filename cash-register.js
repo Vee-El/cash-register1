@@ -16,14 +16,14 @@ function cashRegister(price, cash, cid) {
     
     let cidTotal = 0
 
-    // write super duper code in here
 
      
-    for (let i = 0; i < cid.length; i++) {
-        currencies = cid[i][0];
-        let value = cid[i][1];
+       for (let i = 0; i < cid.length; i++) {
+        const currencyName = cid[i][0];
+        const value = cid[i][1];
         cidTotal += value;
     }
+    
 
     console.log(cidTotal);
 
