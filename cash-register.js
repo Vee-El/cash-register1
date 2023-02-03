@@ -2,6 +2,7 @@
 function cashRegister(price, cash, cid) {
     let status = ``;
     let change = [];
+    let cidTotal = 0
     const currencies = [
         { name: 'ONE HUNDRED', value: 100.00},
         { name: 'TWENTY', value: 20.00},
@@ -12,18 +13,16 @@ function cashRegister(price, cash, cid) {
         { name: 'DIME', value: 0.10},
         { name: 'NICKEL', value: 0.05},
         { name: 'PENNY', value: 0.01}
-      ];
+    ];
     
-    let cidTotal = 0
+
 
     
     for (let i = 0; i < cid.length; i++) {
         let value = cid[i][1];
         cidTotal += value;
-    }
-    console.log(cidTotal);
-    
-    
+        cidTotal = Math.round(cidTotal*100)/100;
+    }   
 
     console.log(cidTotal);
 
