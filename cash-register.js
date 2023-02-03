@@ -13,29 +13,26 @@ function cashRegister(price, cash, cid) {
         { name: 'NICKEL', value: 0.05},
         { name: 'PENNY', value: 0.01}
       ];
+    
+    let cidTotal = 0
 
     // write super duper code in here
 
-    if (price === cash) {
-        status = "CLOSED"
-        change = [
-            ["PENNY", 0.5],
-            ["NICKEL", 0],
-            ["DIME", 0],
-            ["QUARTER", 0],
-            ["ONE", 0],
-            ["FIVE", 0],
-            ["TEN", 0],
-            ["TWENTY", 0],
-            ["ONE HUNDRED", 0]
-          ]
-    };
+     
+    for (let i = 0; i < cid.length; i++) {
+        currencies = cid[i][0];
+        let value = cid[i][1];
+        cidTotal += value;
+    }
+
+    console.log(cidTotal);
 
 
 
 
 
-    return `status: ${status}, change: ${change}`; 
+
+    // return `status: ${status}, change: ${change}`; 
 }
 
 
