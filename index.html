@@ -4,10 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cash Register UI</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
+    <main>
+        <h1></h1>
+        <section class="totals-group">
+            <form id="totals-form">
+                <section class="form-group">
+                    <label for="subtotal">Sub Total: </label>
+                    <!-- input - calculate -6% of total from 'price'/1.06 (FL sales tax) given in cash-register.js -->
+                </section>
+                <section class="form-group">
+                    <label for="sales-tax">Sales Tax: </label>
+                    <!-- input - calculate 'Total - Sub Total' -->
+                </section>
+                <section class="form-group">
+                    <label for="total">Total: </label>
+                    <!-- input from 'price' given in cash-register.js -->
+                </section>
+            </form>
+        </section>
+        <section class="change-group">
+            <form id="change-form">
+                <section class="form-group">
+                    <label for="amount-tendered">Amount Tendered: </label>
+                    <!-- input from 'cash' given in cash-register.js -->
+                </section>
+                <section class="form-group">
+                    <label for="Change">Change Due: </label>
+                    <!-- input from 'change' given in cash-register.js -->
+                </section>
+            </form>
+        </section>
+        <section class="status-group">
+            <!-- Button 'Next Transaction' to pull through next transaction -->
+            <!-- Button 'Cancel Order' reset the page -->
+        </section>
+    </main>
+    <aside class="denominations">
+        <!-- table showing denominations due for change 
+        $100.00	
+        $20.00	
+        $10.00	
+        $5.00	
+        $1.00	
+        $0.25	
+        $0.10	
+        $0.05	
+        $0.01	
+        -->
+    </aside>
 </body>
 </html>
