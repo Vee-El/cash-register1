@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border-width: thick;
+}
+
+main {
+    border-style: solid;
+    border-color: orange;
+}
+
+h1 {
+    border-style: outset;
+    border-color: green;
+}
+
+section {
+    border-style: double;
+    border-color: blue;
+}
+
+h2 {
+    border-style: dotted;
+    border-color: cyan;
+}
+output {
+    border-style: solid;
+    border-color: maroon;
+}
+
+aside {
+    border-style: groove;
+    border-color: hotpink;
+}
+
+footer {
+    border-style: dashed;
+}
