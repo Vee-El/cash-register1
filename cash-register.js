@@ -1,3 +1,5 @@
+//function
+
 function cashRegister(price, cash, cid){
 
     const values = {
@@ -11,6 +13,22 @@ function cashRegister(price, cash, cid){
         "NICKEL": 5,
         "PENNY": 1,
     }
+
+    // Outputs for POS display
+    
+    let subTotalOut = Math.round(((price + Number.EPSILON) * 100) / 100).toPrecision(4);
+    let salesTaxOut = (subTotalOut - price).toFixed(2);
+    let totalOut = price.toFixed(2);
+    let amtTendOut = cash.toFixed(2);
+    let changeDueOut = (cash - price).toFixed(2);
+
+    document.querySelector('#subTotalOut').innerHTML = subTotalOut;
+    document.querySelector('#salesTaxOut').innerHTML = salesTaxOut;
+    document.querySelector('#totalOut').innerHTML = totalOut;
+    document.querySelector('#amtTendOut').innerHTML = amtTendOut;
+    document.querySelector('#changeDueOut').innerHTML = changeDueOut;
+
+    // cashRegister function
 
     if (cash < price){
         return {status: "INCORRECT_PAYMENT", change: []}
@@ -60,7 +78,9 @@ function cashRegister(price, cash, cid){
 
     finalChange = finalChange.reverse()
     return {status: "OPEN", change: finalChange};
+
 }
+
 
 
 cashRegister(19.5, 20, [
@@ -75,99 +95,99 @@ cashRegister(19.5, 20, [
     ["ONE HUNDRED", 100]
 ]);
 
-cashRegister(19.5, 18, [
-    ["PENNY", 1.01],
-    ["NICKEL", 2.05],
-    ["DIME", 3.1],
-    ["QUARTER", 4.25],
-    ["ONE", 90],
-    ["FIVE", 55],
-    ["TEN", 20],
-    ["TWENTY", 60],
-    ["ONE HUNDRED", 100]
-  ]);
-  // => {status: "INCORRECT_PAYMENT", change: []}
+// cashRegister(19.5, 18, [
+//     ["PENNY", 1.01],
+//     ["NICKEL", 2.05],
+//     ["DIME", 3.1],
+//     ["QUARTER", 4.25],
+//     ["ONE", 90],
+//     ["FIVE", 55],
+//     ["TEN", 20],
+//     ["TWENTY", 60],
+//     ["ONE HUNDRED", 100]
+//   ]);
+//   // => {status: "INCORRECT_PAYMENT", change: []}
 
-  cashRegister(19.5, 20, [
-    ["PENNY", 0.01],
-    ["NICKEL", 0],
-    ["DIME", 0],
-    ["QUARTER", 0],
-    ["ONE", 0],
-    ["FIVE", 0],
-    ["TEN", 0],
-    ["TWENTY", 0],
-    ["ONE HUNDRED", 0]
-  ]);
-  // => {status: "INSUFFICIENT_FUNDS", change: []}
+//   cashRegister(19.5, 20, [
+//     ["PENNY", 0.01],
+//     ["NICKEL", 0],
+//     ["DIME", 0],
+//     ["QUARTER", 0],
+//     ["ONE", 0],
+//     ["FIVE", 0],
+//     ["TEN", 0],
+//     ["TWENTY", 0],
+//     ["ONE HUNDRED", 0]
+//   ]);
+//   // => {status: "INSUFFICIENT_FUNDS", change: []}
 
-  cashRegister(19.5, 20, [
-    ["PENNY", 0.5],
-    ["NICKEL", 0],
-    ["DIME", 0],
-    ["QUARTER", 0],
-    ["ONE", 0],
-    ["FIVE", 0],
-    ["TEN", 0],
-    ["TWENTY", 0],
-    ["ONE HUNDRED", 0]
-  ]);
-  /* 
-  {
-    status: "CLOSED",
-    change: [
-      ["PENNY", 0.5],
-      ["NICKEL", 0],
-      ["DIME", 0],
-      ["QUARTER", 0],
-      ["ONE", 0],
-      ["FIVE", 0],
-      ["TEN", 0],
-      ["TWENTY", 0],
-      ["ONE HUNDRED", 0]
-    ]
-  }
-  */
+//   cashRegister(19.5, 20, [
+//     ["PENNY", 0.5],
+//     ["NICKEL", 0],
+//     ["DIME", 0],
+//     ["QUARTER", 0],
+//     ["ONE", 0],
+//     ["FIVE", 0],
+//     ["TEN", 0],
+//     ["TWENTY", 0],
+//     ["ONE HUNDRED", 0]
+//   ]);
+//   /* 
+//   {
+//     status: "CLOSED",
+//     change: [
+//       ["PENNY", 0.5],
+//       ["NICKEL", 0],
+//       ["DIME", 0],
+//       ["QUARTER", 0],
+//       ["ONE", 0],
+//       ["FIVE", 0],
+//       ["TEN", 0],
+//       ["TWENTY", 0],
+//       ["ONE HUNDRED", 0]
+//     ]
+//   }
+//   */
 
-  cashRegister(19.5, 20, [
-    ["PENNY", 1.01],
-    ["NICKEL", 2.05],
-    ["DIME", 3.1],
-    ["QUARTER", 4.25],
-    ["ONE", 90],
-    ["FIVE", 55],
-    ["TEN", 20],
-    ["TWENTY", 60],
-    ["ONE HUNDRED", 100]
-  ]);
+//   cashRegister(19.5, 20, [
+//     ["PENNY", 1.01],
+//     ["NICKEL", 2.05],
+//     ["DIME", 3.1],
+//     ["QUARTER", 4.25],
+//     ["ONE", 90],
+//     ["FIVE", 55],
+//     ["TEN", 20],
+//     ["TWENTY", 60],
+//     ["ONE HUNDRED", 100]
+//   ]);
   
-  // => {status: "OPEN", change: [["QUARTER", 0.5]]}
+//   // => {status: "OPEN", change: [["QUARTER", 0.5]]}
 
-  cashRegister(3.26, 100, [
-    ["PENNY", 1.01],
-    ["NICKEL", 2.05],
-    ["DIME", 3.1],
-    ["QUARTER", 4.25],
-    ["ONE", 90],
-    ["FIVE", 55],
-    ["TEN", 20],
-    ["TWENTY", 60],
-    ["ONE HUNDRED", 100]
-  ]);
-  /*
-  {
-    status: "OPEN",
-    change: [
-      ["PENNY", 0.04],
-      // (no nickels since zero)
-      ["DIME", 0.2],
-      ["QUARTER", 0.5],
-      ["ONE", 1],
-      ["FIVE", 15],
-      ["TEN", 20],
-      ["TWENTY", 60]
-      // (no hundred since zero)
-    ]
-  }
-  */
+//   cashRegister(3.26, 100, [
+//     ["PENNY", 1.01],
+//     ["NICKEL", 2.05],
+//     ["DIME", 3.1],
+//     ["QUARTER", 4.25],
+//     ["ONE", 90],
+//     ["FIVE", 55],
+//     ["TEN", 20],
+//     ["TWENTY", 60],
+//     ["ONE HUNDRED", 100]
+//   ]);
+//   /*
+//   {
+//     status: "OPEN",
+//     change: [
+//       ["PENNY", 0.04],
+//       // (no nickels since zero)
+//       ["DIME", 0.2],
+//       ["QUARTER", 0.5],
+//       ["ONE", 1],
+//       ["FIVE", 15],
+//       ["TEN", 20],
+//       ["TWENTY", 60]
+//       // (no hundred since zero)
+//     ]
+//   }
+//   */
 

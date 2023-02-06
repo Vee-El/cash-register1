@@ -6,16 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register UI</title>
     <link rel="stylesheet" href="style.css"/>
-    <style>
-        table, th, td {
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-        th, td {
-          padding: 5px;
-          text-align: left;
-        }
-    </style>
+    <script type = "text.javascript" src="cash-register.js"></script>
 </head>
 <body>
     <main>
@@ -23,40 +14,34 @@
         <section class="totals-group">
             <form id="totals-form">
                 <section class="form-group">
-                    <label for="subtotal">Sub Total: </label>
-                    <!-- input - calculate -6% of total from 'price'/1.06 (FL sales tax) given in cash-register.js -->
-                    <output>'price'/1.06</output>
+                    <label for="subtotal">Sub Total: $</label>
+                    <h3 id="subTotalOut">0.00</h3>
                 </section>
                 <section class="form-group">
-                    <label for="sales-tax">Sales Tax: </label>
-                    <!-- input - calculate 'Total - Sub Total' -->
-                    <output>Total - Sub Total</output>
+                    <label for="sales-tax">Sales Tax: $</label>
+                    <h3 id="salesTaxOut">0.00</h3>
                 </section>
                 <section class="form-group">
-                    <label for="total">Total: </label>
-                    <!-- input from 'price' given in cash-register.js -->
-                    <output>'price'</output>
+                    <label for="total">Total: $</label>
+                    <h3 id="totalOut">0.00</h3>
                 </section>
             </form>
         </section>
         <section class="change-group">
             <form id="change-form">
                 <section class="form-group">
-                    <label for="amount-tendered">Amount Tendered: </label>
-                    <!-- input from 'cash' given in cash-register.js -->
-                    <output>'cash'</output>
+                    <label for="amount-tendered">Amount Tendered: $</label>
+                    <h3 id="amtTendOut">0.00</h3>
                 </section>
                 <section class="form-group">
-                    <label for="Change">Change Due: </label>
-                    <!-- input from 'finalChange' given in cash-register.js -->
-                    <output>finalChange</output>
+                    <label for="change">Change Due: $</label>
+                    <h3 id="changeDueOut">0.00</h3>
                 </section>
             </form>
         </section>
         <section class="status-group">
-            <!-- Button 'Next Transaction' to pull through next transaction -->
-            <button type="submit">Next Transaction</button>
-            <!-- Button 'Cancel Order' reset the page -->
+            <input type="button" onclick="cashRegister()" value="Next Transaction">
+            <!-- <button onclick="cashRegister()">Next Transaction</button> -->
             <button type="reset">Cancel Order</button>
         </section>
         <aside class="denominations">
