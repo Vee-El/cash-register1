@@ -138,9 +138,12 @@ td {
 }
 
 footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
-    text-align: center; 
+    width: 100%;
     color: #c0c0c0;
+    text-align: center;
 }
 
 .credit {
