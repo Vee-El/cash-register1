@@ -1,9 +1,9 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
 }
 
 body { 
-    background-color: #a2a0a0;
+    background-image: url(https://img.freepik.com/free-photo/metal-plate-texture_1048-2443.jpg?w=740&t=st=1675719136~exp=1675719736~hmac=f53d3ec49c96e137cd80d8cc8a9ec89bfbcab5ebb323098885a7a6f0f914b0dc);
 } 
 
 main {
@@ -19,8 +19,6 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-
-
 }
 
 h1 {
@@ -28,7 +26,9 @@ h1 {
     border-color: #444444;
     width: fixed;
     text-align: center;
-    background-color: #cccdcd;
+    text-shadow: #141741 3px 3px 5px;
+    background-image: url(https://img.freepik.com/free-vector/metallic-texture-background_52683-25383.jpg?w=996&t=st=1675718702~exp=1675719302~hmac=48162451a861d6886f67eed7814e7d7fcdf26e7361c265f914b33ca6a41db47c);
+    background-size: cover;
 }
 
 section {
@@ -41,14 +41,15 @@ label {
     height: 10vh;
 }
 
-.left-hand-labels {
-    background-color: #cccdcd;
+.left-hand-labels {  
+    background-image: linear-gradient(to bottom right, #141741, #2a8fc6);  
     text-align: center;
     margin-right: 10px;
+    color: #ffffff;  
 }
 
 .right-hand-labels {
-    background-color: #ffffff;
+    background-image: radial-gradient(#ffffff, #d1d2d2);
 }
 
 h3 {
@@ -84,7 +85,13 @@ button {
     border-width: thick;
 }
 
+#next {
+    background-image: linear-gradient(to bottom right, #184114, #5ec62a);
+}
 
+#reset {
+    background-image: linear-gradient(to bottom right, #541010, #a26868);
+}
 aside {
     display: flex;
     flex-direction: column;
@@ -95,7 +102,10 @@ h2 {
     border-style: outset;
     border-color: #444444;
     text-align: center;
+    text-shadow: #141741 2px 2px 4px;
+    background-image: url(https://img.freepik.com/free-vector/metallic-texture-background_52683-25383.jpg?w=996&t=st=1675718702~exp=1675719302~hmac=48162451a861d6886f67eed7814e7d7fcdf26e7361c265f914b33ca6a41db47c);
     background-color: #cccdcd;
+    font-size: x-large;
 }
 
 table, th, td {
@@ -109,16 +119,38 @@ padding: 5px;
 text-align: center;
 }
 
+th {
+    background-image: radial-gradient(#2a8fc6, #141741);
+    color: #ffffff;
+}
+
+td {
+    font-weight: bold;
+}
+
+.notes {
+    background-image: radial-gradient(#d1d2d2, #676767);
+    
+}
+
 .no-notes {
-    background-color: #ffffff;
+    background-image: radial-gradient(#ffffff, #d1d2d2);
 }
 
 footer {
-    justify-content: center;
-    text-align: center;   
+    bottom: 0;
+    text-align: center; 
+    color: #c0c0c0;
 }
 
 .credit {
     font-size: xx-small;
-    color: #000000;    
+}
+ 
+a, a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #c0c0c0;
 }
