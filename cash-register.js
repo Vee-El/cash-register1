@@ -25,7 +25,7 @@ function cashRegister(price, cash, cid) {
     
     
 
-    console.log(cidTotal);
+
 
 
 
