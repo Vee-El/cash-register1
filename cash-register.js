@@ -1,5 +1,3 @@
-//function
-
 function cashRegister(price, cash, cid){
 
     const values = {
@@ -83,17 +81,18 @@ function cashRegister(price, cash, cid){
 
 
 
-cashRegister(19.5, 20, [
-    ["PENNY", 1.01],
-    ["NICKEL", 2.05],
-    ["DIME", 3.1],
-    ["QUARTER", 4.25],
-    ["ONE", 90],
-    ["FIVE", 55],
-    ["TEN", 20],
-    ["TWENTY", 60],
-    ["ONE HUNDRED", 100]
-]);
+
+// cashRegister(19.5, 20, [
+//     ["PENNY", 1.01],
+//     ["NICKEL", 2.05],
+//     ["DIME", 3.1],
+//     ["QUARTER", 4.25],
+//     ["ONE", 90],
+//     ["FIVE", 55],
+//     ["TEN", 20],
+//     ["TWENTY", 60],
+//     ["ONE HUNDRED", 100]
+// ]);
 
 // cashRegister(19.5, 18, [
 //     ["PENNY", 1.01],
@@ -149,17 +148,17 @@ cashRegister(19.5, 20, [
 //   }
 //   */
 
-//   cashRegister(19.5, 20, [
-//     ["PENNY", 1.01],
-//     ["NICKEL", 2.05],
-//     ["DIME", 3.1],
-//     ["QUARTER", 4.25],
-//     ["ONE", 90],
-//     ["FIVE", 55],
-//     ["TEN", 20],
-//     ["TWENTY", 60],
-//     ["ONE HUNDRED", 100]
-//   ]);
+  cashRegister(19.5, 20, [
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100]
+  ]);
   
 //   // => {status: "OPEN", change: [["QUARTER", 0.5]]}
 

@@ -1,49 +1,124 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-    border-width: thick;
 }
 
+body { 
+    background-color: #a2a0a0;
+} 
+
 main {
-    border-style: solid;
-    border-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.main-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
 }
 
 h1 {
     border-style: outset;
-    border-color: green;
+    border-color: #444444;
+    width: fixed;
+    text-align: center;
+    background-color: #cccdcd;
 }
 
 section {
-    border-style: double;
-    border-color: blue;
+    display: flex;
+    width: fit-content;
 }
 
-h2 {
-    border-style: dotted;
-    border-color: cyan;
-}
-output {
-    border-style: solid;
-    border-color: maroon;
+label {
+    width: 15vw;
+    height: 10vh;
 }
 
-aside {
+.left-hand-labels {
+    background-color: #cccdcd;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.right-hand-labels {
+    background-color: #ffffff;
+}
+
+h3 {
+    
     border-style: groove;
-    border-color: hotpink;
+    border-color: grey;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#tillStatusOut {
+    background-color: #ffffff;
+}
+
+.buttons-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 button {
-    border-style: none;
-}
-footer {
-    border-style: dashed;
+    width: 15vw;
+    height: 10.5vh;
+    font-weight: bold;
+    font-size: large;
+    padding: 1px;
+    margin: 6px;
+    border-style: groove;
+    border-color: grey;
+    border-width: thick;
 }
 
-/* table, th, td {
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+h2 {
+    border-style: outset;
+    border-color: #444444;
+    text-align: center;
+    background-color: #cccdcd;
+}
+
+table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: #cccdcd;
   }
-  th, td {
-    padding: 5px;
-    text-align: left;
-  } */
+
+th, td {
+padding: 5px;
+text-align: center;
+}
+
+.no-notes {
+    background-color: #ffffff;
+}
+
+footer {
+    justify-content: center;
+    text-align: center;   
+}
+
+.credit {
+    font-size: xx-small;
+    color: #000000;    
+}

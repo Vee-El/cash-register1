@@ -6,43 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register UI</title>
     <link rel="stylesheet" href="style.css"/>
-    <script type = "text.javascript" src="cash-register.js"></script>
+    <script type="text/javascript" src="cash-register.js"></script>
 </head>
 <body>
-    <main>
+    <header>
         <h1>Cash Register</h1>
-        <section class="totals-group">
-            <form id="totals-form">
-                <section class="form-group">
-                    <label for="subtotal">Sub Total: $</label>
-                    <h3 id="subTotalOut">0.00</h3>
+    </header>
+    <main>
+        <section class="main-display">
+            <section class="totals-group">
+                <form id="totals-form">
+                    <section class="pairs-group">
+                        <h3 class="left-hand-labels">Sub Total: $</h3>
+                        <h3 class="right-hand-labels" id="subTotalOut">0.00</h3>
+                    </section>
+                    <section class="pairs-group">
+                        <h3 class="left-hand-labels">Sales Tax: $</h3>
+                        <h3 class="right-hand-labels" id="salesTaxOut">0.00</h3>
+                    </section>
+                    <section class="pairs-group">
+                        <h3 class="left-hand-labels">Total: $</h3>
+                        <h3 class="right-hand-labels" id="totalOut">0.00</h3>
+                    </section>
+                </form>
+            </section>
+            <section class="change-group">
+                <form id="change-form">
+                    <section class="pairs-group">
+                        <h3 class="left-hand-labels">Amount <br>Tendered: $<br></h3>
+                        <h3 class="right-hand-labels" id="amtTendOut">0.00</h3>
+                    </section>
+                    <section class="pairs-group">
+                        <h3 class="left-hand-labels">Change Due: $</h3>
+                        <h3 class="right-hand-labels" id="changeDueOut">0.00</h3>
+                    </section>
+                </form>
+            </section>
+            <section>
+                <section class="pairs-group">
+                    <h3 class="left-hand-labels">Till Status</h3>
+                    <h3 id="tillStatusOut">Open</h3>
                 </section>
-                <section class="form-group">
-                    <label for="sales-tax">Sales Tax: $</label>
-                    <h3 id="salesTaxOut">0.00</h3>
-                </section>
-                <section class="form-group">
-                    <label for="total">Total: $</label>
-                    <h3 id="totalOut">0.00</h3>
-                </section>
-            </form>
-        </section>
-        <section class="change-group">
-            <form id="change-form">
-                <section class="form-group">
-                    <label for="amount-tendered">Amount Tendered: $</label>
-                    <h3 id="amtTendOut">0.00</h3>
-                </section>
-                <section class="form-group">
-                    <label for="change">Change Due: $</label>
-                    <h3 id="changeDueOut">0.00</h3>
-                </section>
-            </form>
-        </section>
-        <section class="status-group">
-            <input type="button" onclick="cashRegister()" value="Next Transaction">
-            <!-- <button onclick="cashRegister()">Next Transaction</button> -->
-            <button type="reset">Cancel Order</button>
+            </section>
+            <section class="buttons-group">
+                <button class="buttons" type="submit" onclick="cashRegister()">Next Transaction</button>
+                <button class="buttons" type="reset">Cancel Order</button>
+            </section>
         </section>
         <aside class="denominations">
             <h2>Change Due</h2>
@@ -90,9 +99,9 @@
             </table>
         </aside>
     </main>
-
     <footer>
         <p class="copyright">&copy; | 2023 | Butler-Lennon-MacKay</p>
+        <p class="credit">Image by kjpargeter on Freepik</p>
     </footer>
 </body>
 </html>
