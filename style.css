@@ -10,8 +10,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;    
 }
 
 .main-display {
@@ -52,8 +51,7 @@ label {
     background-image: radial-gradient(#ffffff, #d1d2d2);
 }
 
-h3 {
-    
+h3 {    
     border-style: groove;
     border-color: grey;
     width: 15vw;
@@ -115,8 +113,8 @@ table, th, td {
   }
 
 th, td {
-padding: 5px;
-text-align: center;
+    padding: 5px;
+    text-align: center;
 }
 
 th {
@@ -130,7 +128,6 @@ td {
 
 .notes {
     background-image: radial-gradient(#d1d2d2, #676767);
-    
 }
 
 .no-notes {
