@@ -1,87 +1,65 @@
+function cashRegister(price, cash, cid){
 
-function cashRegister(price, cash, cid) {
-    let status = ``;
-    let change = [];
-    let cidTotal = 0
-    const currencies = [
-        { name: 'ONE HUNDRED', value: 100.00},
-        { name: 'TWENTY', value: 20.00},
-        { name: 'TEN', value: 10.00},
-        { name: 'FIVE', value: 5.00},
-        { name: 'ONE', value: 1.00},
-        { name: 'QUARTER', value: 0.25},
-        { name: 'DIME', value: 0.10},
-        { name: 'NICKEL', value: 0.05},
-        { name: 'PENNY', value: 0.01}
-    ];
-    
-
-
-    // counts the total cash in drawer 
-    for (let i = 0; i < cid.length; i++) {
-        let value = cid[i][1];
-        cidTotal += value;
-        cidTotal = Math.round(cidTotal*100)/100;
-    }   
-    // delete
-    console.log(`cidTotal: ${cidTotal}`);
-
-    // sums cash minus price
-    let changeDue = cash - price
-    // delete
-    console.log(`changeDue: ${changeDue}`);
-
-    // status: "INCORRECT_PAYMENT", change: []  
-    if (cash < price) {
-        status = "INCORRECT_PAYMENT"; 
-        // delete
-        console.log(`status: "INCORRECT_PAYMENT", change: []`);
+    const values = {
+        "ONE HUNDRED": 10000,
+        "TWENTY": 2000,
+        "TEN": 1000,
+        "FIVE": 500,
+        "ONE": 100,
+        "QUARTER": 25,
+        "DIME": 10,
+        "NICKEL": 5,
+        "PENNY": 1,
     }
 
-    // status: "INSUFFICIENT_FUNDS", change: []
-    if (cidTotal < changeDue) {
-        status = "INSUFFICIENT_FUNDS";
-        // delete
-        console.log(`status: "INSUFFICIENT_FUNDS", change: []`);
+    if (cash < price){
+        return {status: "INCORRECT_PAYMENT", change: []}
     }
-  
-    /* status: "CLOSED", change: [...]
-    with cash-in-drawer as the value for the key change if it is equal to the change due. 
-    Include each currency unit in the drawer, even if its value is zero. 
-    (i.e. DO display ["NICKEL", 0]) */
-    if (cidTotal === changeDue) {
-        status = "CLOSED";
-        // returns PENNY,0.5,NICKEL,0... and not ["PENNY", 0.5], ["NICKEL", 0],...
-        change = cid; 
-        // delete
-        console.log(`status: ${status}, change: ${change}`)
-    }    
 
-    /* status: "OPEN", change: [...]
-    with the change due in coins and bills, as the value of the change key. Only include the 
-    value of a currency unit if its value is not zero. (i.e. do NOT display ["NICKEL", 0])
-    */
-    if (cidTotal > changeDue) {
-        /* create loop working from the end of the 'cid' array - reverse()
-        checking if the value is less than change due and more than $0.00 - cid[j][1]
-        if it is then deduct the value from 'changeDue' and add it to the 'change' array - splice()
-        */
+    let change = cash*100 - price*100;
+    let totalCid = 0;
 
-    }  
+    for (let element of cid){
+        totalCid += element[1]*100;
+    }
+
+    if (totalCid < change){
+    return {status: "INSUFFICIENT_FUNDS", change: []};
+    } 
+ 
+    if (change === totalCid){
+        return {status: "CLOSED", change: cid};
+    }
+
+    cid = cid.reverse()
+    finalChange = []
+
+    for (let element of cid){
+
+        let counter = [element[0], 0];         
+        element[1] = element[1]*100;
+        
+        while (element[1] > 0 && values[element[0]] <= change){
+            change -= values[element[0]];
+            element[1] -= values[element[0]];
+            counter[1] += values[element[0]];
+        }
+        
+        if (counter[1] > 0){
+            finalChange.push(counter);
+        }
+    }
     
+    if (change > 0){
+        return {status: "INSUFFICIENT_FUNDS", change: []};
+    }
+   
+    for (i = 0; i < finalChange.length; i++){
+        finalChange[i][1] = finalChange[i][1]/100
+    }
 
-    
-
-
-
-
-
-
-
-
-
-
-    // return `status: ${status}, change: ${change}`; 
+    finalChange = finalChange.reverse()
+    return {status: "OPEN", change: finalChange};
 }
 
 

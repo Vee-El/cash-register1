@@ -86,7 +86,7 @@ console.log (cashRegister(19.5, 18, [
     ["TEN", 0],
     ["TWENTY", 0],
     ["ONE HUNDRED", 0]
-  ]);)
+  ]));
   /* 
   {
     status: "CLOSED",
