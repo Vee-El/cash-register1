@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register UI</title>
     <link rel="stylesheet" href="style.css"/>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+          text-align: left;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -40,10 +50,55 @@
         </section>
         <section class="status-group">
             <!-- Button 'Next Transaction' to pull through next transaction -->
+            <button type="submit">Next Transaction</button>
             <!-- Button 'Cancel Order' reset the page -->
+            <button type="reset">Cancel Order</button>
         </section>
     </main>
     <aside class="denominations">
+        <table>
+            <tr>
+                <th>Notes</th>
+                <th>No. of notes</th>
+
+            </tr>
+            <tr>
+                <td>$100.00</td>
+                <td>0</td> 
+            </tr>
+            <tr>
+                <td>$20.00</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$10.00</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$5.00</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$1.00</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$0.25</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$0.10</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$0.05</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>$0.01</td>     
+                <td>0</td>   
+            </tr>
+        </table>
         <!-- table showing denominations due for change 
         $100.00	
         $20.00	
