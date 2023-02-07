@@ -69,6 +69,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 button {
@@ -81,6 +82,12 @@ button {
     border-style: groove;
     border-color: grey;
     border-width: thick;
+    cursor: pointer;
+    transition: all 300ms ease-in;
+}
+
+button:focus {   
+    color: #ffffff;
 }
 
 #next {
@@ -90,6 +97,7 @@ button {
 #reset {
     background-image: linear-gradient(to bottom right, #541010, #a26868);
 }
+
 aside {
     display: flex;
     flex-direction: column;
